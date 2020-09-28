@@ -44,7 +44,7 @@ function results() {
     }   else if (computerChosen === 'rock' && userChosen === 'paper') {
          outcome = "You win! Paper covers rock."
     }   else if (computerChosen === 'rock' && userChosen === 'scissors'){
-         outcome = " You lost!, rock beats scissors."
+         outcome = " You lost! rock beats scissors."
     }   else if (computerChosen === 'paper' && userChosen === 'rock') {
          outcome = "You lost! Rock covers paper."
     }   else if (computerChosen === 'paper' && userChosen === 'scissors'){
