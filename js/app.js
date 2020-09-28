@@ -2,50 +2,62 @@
 
 let userChosen
 let computerChosen
-var result = results()
+let outcome;
 const displayResult = document.getElementById('result');
 const computerChoice = document.getElementById('computer-choice');
-const randomNumber = Math.floor ((Math.random () * 3) +1);
+let randomNumber = Math.floor((Math.random() * 3) +1);
+
+console.log(randomNumber + " is the random");
 const userChoice = document.getElementById('user-choice');
-const possibleChoices = document.querySelectorAll(.choices);
+const possibleChoices = document.querySelectorAll(".choices");
+
+
 
 //user chosen mods
-possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) =>{
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    console.log(e.target.id)
     userChosen = e.target.id
     generatedComputerChoice()
-    results()
-    userChoice.innerHTML = userChosen
-    computerChoice.innerHTML = computerChosen
-    displayResult.innerHTML = result
+    results();
+    userChoice.innerHTML = userChosen;
+    computerChoice.innerHTML = computerChosen;
+    displayResult.innerHTML = outcome;
 }))
 
 
 //computer choice randomizer below
-function generatedComputerChoice(){
-    if (randomNumber === 1){
-        return computerChosen === 'rock'
-    } else if (randomNumber === 2){
-        return computerChosen === 'paper'
-    } else if (randomNumber === 3){
-        return computerChosen = 'scissors'
+function generatedComputerChoice() {
+    console.log('fired')
+    if (generateRandom() === 1) {
+         computerChosen = 'rock'
+    } else if (generateRandom() === 2) {
+        computerChosen = 'paper'
+    } else if (generateRandom() === 3) {
+         computerChosen = 'scissors'
     }
 }
 
 //  Get Results 
-function result() {
+function results() {
     if (computerChosen === userChosen) {
-        return result = "It is a Tie, my friend"
+        outcome = "It is a Tie, my friend"
     }   else if (computerChosen === 'rock' && userChosen === 'paper') {
-        return result = "You win! Paper covers rock."
+         outcome = "You win! Paper covers rock."
     }   else if (computerChosen === 'rock' && userChosen === 'scissors'){
-        return result = " You lost!, rock beats scissors."
-    }   else if (computerChosen === 'paper' && userChosen === 'rock'){
-        return result = "You lost! Rock covers paper."
+         outcome = " You lost!, rock beats scissors."
+    }   else if (computerChosen === 'paper' && userChosen === 'rock') {
+         outcome = "You lost! Rock covers paper."
     }   else if (computerChosen === 'paper' && userChosen === 'scissors'){
-        return result = "You win! Scissors cuts paper."
+         outcome = "You win! Scissors cuts paper."
     }   else if (computerChosen === 'scissors' && userChosen === 'rock'){
-        return result = "You win! Rock clobbers scissors."
-    }   else if (computerChosen === 'scissors' && userChosen === 'paper'){
-        return result = "You lose! Scissors slices paper."
+         outcome = "You win! Rock clobbers scissors."
+    }   else if (computerChosen === 'scissors' && userChosen === 'paper') {
+         outcome = "You lose! Scissors slices paper."
     }
+    return outcome;
 }
+
+function generateRandom() {
+    return Math.floor((Math.random() * 3) +1);
+}
+console.log("I am the generated random ==", generateRandom())
