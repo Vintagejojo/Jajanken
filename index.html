@@ -3,24 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Fonts below -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Squada+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
 <div class="container">
-   <h2>Computer Choice:</h2>
-        <h2 id="computer-choice"class = "small"></h2>
-    
-        <h2>Your Choice:</h2>
-        <h2 id="user-choice"class = "small"></h2>
-    
-        <h2>Results:</h2>
-        <h2 id="result"class = "small"></h2>
-    
-        <button class="choices" id="rock">rock</button>
-        <button class="choices" id="paper">paper</button>
-        <button class="choices" id="scissors">scissors</button>
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <h1 class="game_title">
+                Rock Paper Scissors 
+                <p class="title_sub">A game of wits</p>
+            </h1>
+        </div>
+    </div>
+    <!-- Next row is going to have the buttons -->
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <h2 class="choices_header">
+                Make Your Choice
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-between">
+            <button class="choices" id="rock">rock</button>
+            <button class="choices" id="paper">paper</button>
+            <button class="choices" id="scissors">scissors</button> 
+        </div>
+    </div>
 </div>
+<!-- Main tag is going to have the meat and taters -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 choice_container d-flex justify-content-center">
+                <p class=" choice_text">Player Chose:
+                    <h3 id="user-choice"class = "small"></h3>
+                </p>
+            </div>
+            <div class="col-lg-6 choice_container d-flex justify-content-center">
+                <p class=" choice_text">Computer Chose:
+                    <h3 id="computer-choice"class = "small"></h3>
+                </p>
+            </div>
+        </div>
+        <!-- next row is for the result container -->
+        <div class="row">
+            <div class="col-lg-12 result_container d-flex justify-content-center">
+                <h4 class="results_text">Results:</h4>
+                <h4 id="result"class = "small"></h4>
+            </div>
+            <!-- gonna try and get a score going below -->
+            <div class="row">
+                <div class="col-12-lg d-flex justify-content-center">
+                    <div class="score_container">
+                        <h5>Score:</h5>
+                        <h5 class="small" id="score_points">
+
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+    </div>
+</main>
     
 
      
@@ -29,3 +79,16 @@
       <script src="./js/app.js" charset="utf-8"></script>
 </body>
 </html>
+
+<!-- <h2>Computer Choice:</h2>
+<h3 id="computer-choice"class = "small"></h3>
+
+<h2>Your Choice:</h2>
+<h3 id="user-choice"class = "small"></h3>
+
+<h4>Results:</h4>
+<h4 id="result"class = "small"></h4>
+
+<button class="choices" id="rock">rock</button>
+<button class="choices" id="paper">paper</button>
+<button class="choices" id="scissors">scissors</button> -->
